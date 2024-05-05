@@ -1,0 +1,20 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://ch3xwhcjf0lew"]
+
+[ext_resource type="AudioStream" uid="uid://r4kfr873osmq" path="res://Sounds/Steps/Metal/Footsteps_MetalV2_Run_01.wav" id="1_0dg4q"]
+[ext_resource type="AudioStream" uid="uid://c7r01m7s18csh" path="res://Sounds/Steps/Metal/Footsteps_MetalV2_Run_02.wav" id="2_xbgaa"]
+[ext_resource type="AudioStream" uid="uid://c3p36re8pvgoa" path="res://Sounds/Steps/Metal/Footsteps_MetalV2_Run_03.wav" id="3_7otnw"]
+[ext_resource type="AudioStream" uid="uid://dhq7g2figrftp" path="res://Sounds/Steps/Metal/Footsteps_MetalV2_Run_04.wav" id="4_2jgvj"]
+[ext_resource type="AudioStream" uid="uid://cnkasfnvkc8ox" path="res://Sounds/Steps/Metal/Footsteps_MetalV2_Run_05.wav" id="5_l43ld"]
+
+[resource]
+streams_count = 5
+stream_0/stream = ExtResource("1_0dg4q")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_xbgaa")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_7otnw")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_2jgvj")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_l43ld")
+stream_4/weight = 1.0
