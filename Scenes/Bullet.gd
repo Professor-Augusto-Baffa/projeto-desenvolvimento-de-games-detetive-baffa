@@ -20,6 +20,9 @@ func _process(delta):
 func _on_lifespan_timeout():
 	queue_free()
 
-
 func _on_area_entered(area):
+	queue_free()
+
+func _on_body_entered(body):
+	self.hide()
 	queue_free()
