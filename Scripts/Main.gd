@@ -1,20 +1,26 @@
 extends Node2D
 
-@onready var player: Player = $Player
+#@onready var player: Player = $Player
+
+@export var available_levels : Array[LevelData]
+
+@onready var _2d_scene = $"2DScene"
 
 @export var RECOIL: float = 1000
 func player_bullet(pos: Vector2):
 	var bullet_angle: float = (get_global_mouse_position() - pos).angle()
 	var bullet_instance = Bullet.spawn(pos, bullet_angle)
-	player.velocity += Vector2.from_angle(bullet_angle) * -RECOIL 
-	player.move_and_slide()
+	#player.velocity += Vector2.from_angle(bullet_angle) * -RECOIL 
+	#player.move_and_slide()
 	add_child(bullet_instance)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Player/Camera2D.zoom = Vector2.ONE * 4
-	$MusicPlayer.play()
-	$AmbiancePlayer.play()
+	#$Player/Camera2D.zoom = Vector2.ONE * 4
+	#$MusicPlayer.play()
+	#$AmbiancePlayer.play()
+	LevelManager.main_scene = _2d_scene
+	LevelManager.levels = available_levels
 	pass # Replace with function body.
 
 

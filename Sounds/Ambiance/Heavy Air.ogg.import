@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4uj127jntivi"
+path="res://.godot/imported/Heavy Air.ogg-da1f4e04a5499cf9b199d918857c3ff9.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sounds/Ambiance/Heavy Air.ogg"
+dest_files=["res://.godot/imported/Heavy Air.ogg-da1f4e04a5499cf9b199d918857c3ff9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

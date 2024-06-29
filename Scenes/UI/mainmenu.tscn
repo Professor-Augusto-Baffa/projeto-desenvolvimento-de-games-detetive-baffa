@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4y014usxxrm7"]
+
+[ext_resource type="Script" path="res://Scenes/UI/mainmenu.gd" id="1_f67gg"]
+[ext_resource type="Texture2D" uid="uid://g2okfrypgqka" path="res://Textures/bg02.png" id="1_yr11q"]
+[ext_resource type="FontFile" uid="uid://bgon72iw0lpu" path="res://Fonts/GlitchGoblin-2O87v.ttf" id="2_ctbbk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o2aed"]
+font = ExtResource("2_ctbbk")
+font_size = 64
+font_color = Color(0.870588, 0.870588, 0, 1)
+outline_size = 16
+outline_color = Color(0.305882, 0.215686, 0.14902, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f67gg")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1389.0
+offset_bottom = 425.0
+scale = Vector2(1.3765, 2.53588)
+texture = ExtResource("1_yr11q")
+
+[node name="MarginContainer" type="MarginContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="BG/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "DETETIVE BAFFA"
+label_settings = SubResource("LabelSettings_o2aed")
+
+[node name="PlayButton" type="Button" parent="BG/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_ctbbk")
+theme_override_font_sizes/font_size = 54
+text = "INICIAR JOGO"
+
+[node name="QuitButton" type="Button" parent="BG/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ctbbk")
+theme_override_font_sizes/font_size = 54
+text = "SAIR DO JOGO"
+
+[connection signal="pressed" from="BG/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BG/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

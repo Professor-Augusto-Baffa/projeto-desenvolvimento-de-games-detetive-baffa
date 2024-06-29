@@ -15,6 +15,7 @@ var jump_timer: float = 0
 var coyote_timer: float = 0
 var wind_timer: float = 0
 var was_on_floor: bool = true
+var can_control: bool = true
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -41,6 +42,7 @@ func _ready():
 	$AnimatedSprite2D.play('idle')
 
 func _physics_process(delta):
+	if not can_control : return
 	var mouse_direction: Vector2 = get_global_mouse_position() - $Center.global_position
 	sprite.flip_h = mouse_direction.x < 0
 	$Gun.flip_h = mouse_direction.x < 0
@@ -99,3 +101,19 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
+
+func _on_porta_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	pass # Replace with function body.
+
+func handle_danger() -> void:
+	print("Player Died")
+	visible = false
+	can_control = false
+	
+	await get_tree().create_timer(1).timeout
+	reset_player()
+	
+func reset_player():
+	LevelManager.load_level(1)
+	visible = true
+	can_control = true
