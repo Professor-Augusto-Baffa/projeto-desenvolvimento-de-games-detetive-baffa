@@ -7,6 +7,13 @@ extends Node2D
 @onready var _2d_scene = $"2DScene"
 
 @export var RECOIL: float = 1000
+
+# Exit the game with 'esc'
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+
+
 func player_bullet(pos: Vector2):
 	var bullet_angle: float = (get_global_mouse_position() - pos).angle()
 	var bullet_instance = Bullet.spawn(pos, bullet_angle)

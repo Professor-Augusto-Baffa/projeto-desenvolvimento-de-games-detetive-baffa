@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://bimdrje535c20"]
+
+[ext_resource type="Texture2D" uid="uid://bafnrw07tk41k" path="res://Textures/guarda/guarda_idle_walking.png" id="1_6f6qu"]
+[ext_resource type="Texture2D" uid="uid://f1sm0q6dskkp" path="res://Textures/guarda/guarda_idle_wlaking_malfuntion.png" id="2_g4sgp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2oeo"]
+atlas = ExtResource("1_6f6qu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvuh5"]
+atlas = ExtResource("1_6f6qu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu5ur"]
+atlas = ExtResource("2_g4sgp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v31u"]
+atlas = ExtResource("2_g4sgp")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3601"]
+atlas = ExtResource("2_g4sgp")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wqvo"]
+atlas = ExtResource("2_g4sgp")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pxkc"]
+atlas = ExtResource("1_6f6qu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u724x"]
+atlas = ExtResource("1_6f6qu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvk4t"]
+atlas = ExtResource("2_g4sgp")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bahoe"]
+atlas = ExtResource("2_g4sgp")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6566l"]
+atlas = ExtResource("2_g4sgp")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doucw"]
+atlas = ExtResource("2_g4sgp")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lcba6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2oeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvuh5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu5ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8v31u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3601")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wqvo")
+}],
+"loop": true,
+"name": &"idle_hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pxkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u724x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvk4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bahoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6566l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doucw")
+}],
+"loop": true,
+"name": &"walk_hurt",
+"speed": 5.0
+}]
+
+[node name="Guarda" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lcba6")
+animation = &"idle"
+autoplay = "idle"
