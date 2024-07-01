@@ -10,4 +10,4 @@ Acesse nossa [página no itch.io](https://pombozap.itch.io/baffa) e clique em jo
 
 (G1) GDD e MVP:
 - GDD: https://drive.google.com/file/d/1_kQLe5JD19r81Y78RU0lGdd1vqKkLUGD/view?usp=sharing
-- Vídeo: https://www.youtube.com/watch?v=nU2_xVg1vmI&ab_channel=TomazNeves
+- Vídeo: https://youtu.be/jszoKyb5o3A
