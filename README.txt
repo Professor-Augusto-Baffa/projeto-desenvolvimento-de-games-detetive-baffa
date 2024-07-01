@@ -6,7 +6,7 @@ Detetive Baffa é um jogo Cyberpunk 2D de parkour e ação, onde Baffa, o epôni
 - Tomaz Neves - 2011034
 
 Como abrir o jogo:
-O jogo ainda não tem um executável, e só pode ser aberto pela Godot baixando o projeto e abrindo-o na engine.
+Acesse nossa [página no itch.io](https://pombozap.itch.io/baffa) e clique em jogar!
 
 (G1) GDD e MVP:
 - GDD: https://drive.google.com/file/d/1_kQLe5JD19r81Y78RU0lGdd1vqKkLUGD/view?usp=sharing

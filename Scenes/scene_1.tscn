@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c4yck7411fu6y"]
+[gd_scene load_steps=21 format=3 uid="uid://c4yck7411fu6y"]
 
 [ext_resource type="Script" path="res://Scripts/scene_1.gd" id="1_t3nng"]
 [ext_resource type="Texture2D" uid="uid://c0tpfkrm0pknj" path="res://icon.svg" id="2_6l0vq"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://t0lr3qoii50o" path="res://Scenes/drone.tscn" id="6_lds5n"]
 [ext_resource type="PackedScene" uid="uid://ce40b358w4k8f" path="res://Scenes/ammo.tscn" id="6_ql0em"]
 [ext_resource type="PackedScene" uid="uid://bimdrje535c20" path="res://Scenes/guard.tscn" id="7_t8nr7"]
-[ext_resource type="AudioStream" uid="uid://ilejdit6w3t1" path="res://Sounds/Ambiance/No Sunlight Here.ogg" id="8_mcf5y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5ui1"]
 atlas = ExtResource("4_jcfar")
@@ -1158,12 +1157,14 @@ sprite_frames = SubResource("SpriteFrames_y02cs")
 script = ExtResource("5_l17ai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Joelme/Area2D"]
+visible = false
 position = Vector2(0, -3.51196)
 shape = SubResource("RectangleShape2D_m47ms")
 
 [node name="Timer" type="Timer" parent="Joelme/Area2D"]
 
 [node name="Label" type="Label" parent="Joelme/Area2D"]
+visible = false
 offset_left = -33.0
 offset_top = -53.0
 offset_right = 34.0
@@ -1173,9 +1174,11 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="A" type="Marker2D" parent="Joelme/Area2D"]
+visible = false
 position = Vector2(-24.7742, -28.0975)
 
 [node name="B" type="Marker2D" parent="Joelme/Area2D"]
+visible = false
 position = Vector2(24, 21.0733)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
@@ -1191,7 +1194,6 @@ layer_0/tile_data = PackedInt32Array(-65536, 262145, 7, -65535, 262145, 7, -6553
 position = Vector2(23, -25)
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="NewPlayer"]
-stream = ExtResource("8_mcf5y")
 autoplay = true
 
 [node name="Ammo" parent="." instance=ExtResource("6_ql0em")]
@@ -1203,7 +1205,7 @@ position = Vector2(179, -26)
 position = Vector2(228.115, -232.145)
 
 [node name="Drone" parent="Enemies" instance=ExtResource("6_lds5n")]
-position = Vector2(353, 119)
+position = Vector2(368, -78)
 
 [node name="Guard" parent="Enemies" instance=ExtResource("7_t8nr7")]
 position = Vector2(460, -472)
