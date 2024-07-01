@@ -1,0 +1,151 @@
+[gd_scene load_steps=22 format=3 uid="uid://bljakr8s4cdck"]
+
+[ext_resource type="Script" path="res://Scripts/boss.gd" id="1_fa7hq"]
+[ext_resource type="Texture2D" uid="uid://dwfvsekpg32xm" path="res://Textures/Enemies/boss.png" id="1_o0jxj"]
+[ext_resource type="Texture2D" uid="uid://syos8psv7ru0" path="res://Textures/Enemies/boss_bubble.png" id="2_2dmwb"]
+[ext_resource type="Script" path="res://Scripts/boss_arm.gd" id="3_ocfxf"]
+[ext_resource type="Texture2D" uid="uid://b6v0u3mlgodsc" path="res://Textures/Enemies/boss_gun.png" id="4_0aeq1"]
+[ext_resource type="PackedScene" uid="uid://gm7sgs0yiama" path="res://Components/damage_component.tscn" id="5_gkqrv"]
+[ext_resource type="AudioStream" uid="uid://by61uejikj235" path="res://Sounds/Gun/5.56/556 Single WAV.wav" id="7_055cp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do71u"]
+atlas = ExtResource("1_o0jxj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxj6o"]
+atlas = ExtResource("1_o0jxj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7ogt"]
+atlas = ExtResource("1_o0jxj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnbmf"]
+atlas = ExtResource("1_o0jxj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkje2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do71u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxj6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7ogt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnbmf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l4kys"]
+radius = 15.0333
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmprb"]
+atlas = ExtResource("2_2dmwb")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvrx2"]
+atlas = ExtResource("2_2dmwb")
+region = Rect2(0, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tyql"]
+atlas = ExtResource("2_2dmwb")
+region = Rect2(0, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlamf"]
+atlas = ExtResource("2_2dmwb")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtvys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmprb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvrx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tyql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlamf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b15d4"]
+atlas = ExtResource("4_0aeq1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u0pr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b15d4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bm1y7"]
+radius = 6.0
+
+[node name="Boss" type="CharacterBody2D"]
+script = ExtResource("1_fa7hq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2)
+sprite_frames = SubResource("SpriteFrames_bkje2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_l4kys")
+
+[node name="Bubble" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_mtvys")
+
+[node name="Arm" type="Area2D" parent="."]
+position = Vector2(-18, 0)
+collision_layer = 2
+collision_mask = 11
+script = ExtResource("3_ocfxf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arm"]
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_3u0pr")
+offset = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm"]
+shape = SubResource("CircleShape2D_bm1y7")
+
+[node name="DamageComponent" parent="Arm" instance=ExtResource("5_gkqrv")]
+
+[node name="TimeBetweenShots" type="Timer" parent="Arm"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Nozzle" type="Marker2D" parent="Arm"]
+position = Vector2(0, 13)
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="Arm"]
+stream = ExtResource("7_055cp")
+
+[node name="Label" type="Label" parent="Arm"]
+offset_left = -12.0
+offset_top = -29.0
+offset_right = 12.0
+offset_bottom = -6.0
+
+[connection signal="timeout" from="Arm/TimeBetweenShots" to="Arm" method="_on_time_between_shots_timeout"]

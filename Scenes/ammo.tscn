@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ce40b358w4k8f"]
+
+[ext_resource type="Script" path="res://Scenes/ammo.gd" id="1_eilkg"]
+[ext_resource type="Texture2D" uid="uid://c375r77lcx7wy" path="res://Textures/ammo.png" id="2_4bp08"]
+[ext_resource type="AudioStream" uid="uid://jsqrue1msr6" path="res://Sounds/Gun/reloadpt2.wav" id="3_v1qkg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eghh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4bp08")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfkxc"]
+size = Vector2(13, 12)
+
+[node name="Ammo" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_eilkg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eghh0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_pfkxc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_v1qkg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

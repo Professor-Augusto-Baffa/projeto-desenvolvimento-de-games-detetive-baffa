@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccjdomo488wnn"]
+
+[ext_resource type="Script" path="res://Components/knockback_component.gd" id="1_jboto"]
+
+[node name="KnockbackComponent" type="Node2D"]
+script = ExtResource("1_jboto")

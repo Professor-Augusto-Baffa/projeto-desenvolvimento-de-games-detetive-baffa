@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgtlfmael8jqp"]
-
-[ext_resource type="Script" path="res://Scenes/interaction_area/detection_zone.gd" id="1_5d01h"]
-
-[node name="detection_zone" type="Area2D"]
-script = ExtResource("1_5d01h")
