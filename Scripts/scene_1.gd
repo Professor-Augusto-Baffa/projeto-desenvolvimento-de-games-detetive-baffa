@@ -11,3 +11,8 @@ func _process(delta):
 
 func _on_music_player_finished():
 	$NewPlayer/MusicPlayer.play()
+
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		Global.goto_scene("res://Scenes/Main.tscn")

@@ -10,3 +10,5 @@ extends Node2D
 func _ready():
 	LevelManager.main_scene = _2d_scene
 	LevelManager.levels = available_levels
+
+

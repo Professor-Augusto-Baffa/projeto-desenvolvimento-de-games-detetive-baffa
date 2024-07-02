@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c074l27rtpri1" path="res://Textures/Cursed_Character_Pack_COMPLETE/Pistol/shoot-p.png" id="13_gex2h"]
 [ext_resource type="AudioStream" uid="uid://by61uejikj235" path="res://Sounds/Gun/5.56/556 Single WAV.wav" id="14_axyph"]
 [ext_resource type="Texture2D" uid="uid://c0tpfkrm0pknj" path="res://icon.svg" id="15_qib7b"]
-[ext_resource type="PackedScene" uid="uid://cb813ovhaa2vr" path="res://Scenes/bullet.tscn" id="16_eeaco"]
+[ext_resource type="PackedScene" uid="uid://cb813ovhaa2vr" path="res://Scenes/Bullet.tscn" id="16_eeaco"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4y5x"]
 atlas = ExtResource("2_2xqn3")
