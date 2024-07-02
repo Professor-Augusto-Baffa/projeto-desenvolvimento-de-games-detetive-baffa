@@ -9,4 +9,4 @@
 Acesse nossa [página no itch.io](https://pombozap.itch.io/baffa) e clique em jogar!
 
 ## (G1) GDD e MVP
-Clique [aqui](https://drive.google.com/file/d/1_kQLe5JD19r81Y78RU0lGdd1vqKkLUGD/view?usp=sharing) para baixar o GDD. Um vídeo apresentando seu conteúdo está disponível [no Youtube](https://youtu.be/jszoKyb5o3A): https://youtu.be/jszoKyb5o3A
+Clique [aqui](https://drive.google.com/drive/folders/1-U4uSvC6AB8FXdGj45sWKo_fhGa8BUQk) para baixar o GDD. Um vídeo apresentando seu conteúdo está disponível [no Youtube](https://youtu.be/jszoKyb5o3A): https://youtu.be/jszoKyb5o3A
